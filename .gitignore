@@ -9,7 +9,7 @@
 crash.log
 crash.*.log
 
-# Ignore Terraform variable files, which may contain sensitive data
+# Ignore Terraform variable files, which may contain sensitive data, except example.tfvars
 *.tfvars
 *.tfvars.json
 

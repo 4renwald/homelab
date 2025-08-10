@@ -3,10 +3,10 @@ terraform {
 
   required_providers {
     vultr = {
-      source = "vultr/vultr"
+      source  = "vultr/vultr"
       version = "2.26.0"
     }
-    
+
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = "~> 5"
@@ -16,8 +16,8 @@ terraform {
 
 provider "vultr" {
   api_key = var.vultr_api_key
-  rate_limit = 100
-  retry_limit = 3
+  rate_limit    = 100
+  retry_limit   = 3
 }
 
 provider "cloudflare" {

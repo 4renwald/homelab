@@ -1,3 +1,7 @@
+####################################
+## vultr-instance variables
+####################################
+
 variable "vultr_api_key" {
   type        = string
   description = "API key used to deploy Vultr resources."
@@ -25,12 +29,6 @@ variable "label" {
   description = "Label to assign to the Vultr instance."
 }
 
-variable "backups" {
-  type        = string
-  description = "Enabled backups of instance."
-  default     = "disabled"
-}
-
 variable "region" {
   type        = string
   description = "Vultr region code where the instance will be deployed."
@@ -54,23 +52,31 @@ variable "os_id" {
   default     = 2571
 }
 
-variable "user_scheme" {
+variable "ssh_allowed_ip" {
   type        = string
-  description = "The scheme used for the default user."
-  default     = "limited"
+  description = "IP address allowed to SSH into the instance."
+}
+
+variable "firewallgroup_name" {
+  type        = string
+  description = "Name of the firewall group linked to the instance."
+}
+
+####################################
+## cloudflare-dns-record variables
+####################################
+
+variable "dns_record_comment" {
+  type        = string
+  description = "Comment for the DNS record."
 }
 
 variable "domain_name" {
   type        = string
-  description = "NetBird domain name."
+  description = "Domain name used for the DNS record."
 }
 
 variable "subdomain_name" {
   type        = string
-  description = "NetBird subdomain name."
-}
-
-variable "ssh_allowed_ip" {
-  type        = string
-  description = "IP address allowed to SSH into the instance."
+  description = "Subdomain used for the DNS record."
 }
